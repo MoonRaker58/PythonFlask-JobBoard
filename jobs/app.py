@@ -32,7 +32,6 @@ def close_connection(exception):
 
 @app.route('/')
 @app.route('/jobs')
-@app.route('/job/')
 def jobs():
     jobs = execute_sql('SELECT job.id, job.title, job.description, job.salary, employer.id as employer_id, employer.name as employer_name FROM job JOIN employer ON employer.id = job.employer_id')
     return render_template('index.html', jobs=jobs)
@@ -62,3 +61,8 @@ def review(employer_id):
 
         return redirect(url_for('employer', employer_id=employer_id))
     return render_template('review.html', employer_id=employer_id)
+
+@app.route('/job/')
+@app.route('/employer/')
+def jobs_redirect():
+    return redirect(url_for('jobs'))
