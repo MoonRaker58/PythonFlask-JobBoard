@@ -5,14 +5,36 @@
     <title>Job Board</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bulma.min.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css')}}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all.css')}}">
+
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> -->
   </head>
   <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="{{ url_for('jobs') }}">
+          <img src="{{ url_for('static', filename='images/jb-logo.png')}}" width="112" height="28" alt="JobBoard">
+        </a>
+        <!-- <a class="navbar-item" href="{{ url_for('jobs') }}">Job BoardExample</a> -->
+      </div>
+      <!-- <div class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item"href="{{ url_for('jobs') }}">Jobs</a>
+        </div>
+        <div class="navbar-end">
+          <a class="navbar-item"href="{{ url_for('jobs') }}">Employer</a>
+        </div> -->
+
+      </div>
+    </nav>
     <div class="container top">
+
       <div class="content">
         {% block content %}
         {% endblock %}
       </div>
     </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/app.js')}}">
+    </script>
   </body>
 </html>
