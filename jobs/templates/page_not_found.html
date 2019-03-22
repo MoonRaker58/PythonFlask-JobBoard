@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="card adjust-height">
+  <header class="card-header">
+    <p class="card-header-title">
+      <!-- <h1 class="has-text-danger">404</h1> -->
+      404 - page_not_found
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      <p>Sorry, the page you requested unknown.</p>
+      <p>You can start back at the <a href="{{ url_for('jobs') }}">Job Board</a></p>
+    </div>
+  </div>
+  {% endblock %}

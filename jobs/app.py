@@ -67,3 +67,7 @@ def review(employer_id):
 @app.route('/employer/')
 def jobs_redirect():
     return redirect(url_for('jobs'))
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('page_not_found.html')
