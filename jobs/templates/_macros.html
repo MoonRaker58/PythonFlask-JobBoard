@@ -7,11 +7,33 @@
   </header>
   <div class="card-content">
     <div class="content">
-      <p>
         <a href="{{ url_for('employer', employer_id=job['employer_id']) }}">{{ job['employer_name'] }}</a><br>
-        <abbr title="Annual Salary" class="currency">{{ job['salary'] }}</abbr><br>
-        {{ job['description'] }}
-      </p>
+        <p title="Annual Salary" class="currency">{{ job['salary'] }}</p>
+        {{ job['description'] }} <br>
+        <div class="w3-container">
+          <div class="w3-panel w3-card w3-light-grey">
+            <div class="w3-code jsHigh notranslate">
+              var x = 4;<br>
+              var y = 'Banana';
+            </div>
+            <!-- <div class="w3-code cssHigh">
+              body {<br>
+                background-color: #d0e4fe;<br>
+              }<br><br>
+
+              h1 {<br>
+                color: orange;<br>
+                text-align: center;<br>
+              }<br><br>
+
+              p {<br>
+                font-family: "Times New Roman";<br>
+                font-size: 20px;<br>
+              }
+            </div> -->
+          </div>
+        </div>
+
     </div>
   </div>
 </div>
@@ -20,9 +42,9 @@
 {% macro show_jobs(jobs) %}
 <div class="columns is-multiline">
   {% for job in jobs %}
-    <div class="column is-half">
-      {{ show_job(job) }}
-    </div>
+  <div class="column is-half">
+    {{ show_job(job) }}
+  </div>
   {% endfor %}
 </div>
 {% endmacro %}

@@ -11,7 +11,8 @@ function formatMoney(n, v, d, t, c ) {
   return s + c + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (v ? d + Math.abs(n - i).toFixed(v).slice(2) : "");
 };
 
-var els = document.querySelectorAll('abbr.currency');
+var els = document.querySelectorAll('p.currency');
 for (var i=0; i< els.length; i++) {
   els[i].innerText = formatMoney(els[i].innerText, 0)
 }
+w3CodeColor();
