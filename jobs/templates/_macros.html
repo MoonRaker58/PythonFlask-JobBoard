@@ -9,7 +9,6 @@
     <div class="content">
       <p>
         <a href="{{ url_for('employer', employer_id=job['employer_id']) }}">{{ job['employer_name'] }}</a><br>
-        <!-- <p class="currency">${{ job['salary'] }}</p> -->
         <abbr title="Annual Salary" class="currency">{{ job['salary'] }}</abbr><br>
         {{ job['description'] }}
       </p>

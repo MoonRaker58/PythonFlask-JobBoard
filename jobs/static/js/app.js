@@ -10,15 +10,8 @@ function formatMoney(n, v, d, t, c ) {
 
   return s + c + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (v ? d + Math.abs(n - i).toFixed(v).slice(2) : "");
 };
+
 var els = document.querySelectorAll('abbr.currency');
-// console.log(els);
 for (var i=0; i< els.length; i++) {
-  console.log(i);
-  console.log(els[i].innerText);
-  console.log(formatMoney(-els[i].innerText, 0));
   els[i].innerText = formatMoney(els[i].innerText, 0)
-  // console.log(els[i]);
-  // console.log(el.namedItem);
-  // console.log(el.item);
-  // console.log(el.length);
 }
